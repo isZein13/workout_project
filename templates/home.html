@@ -1,7 +1,7 @@
 <h1>Hello User welcome to Profile page!</h1>
 
-<form action="/profile2">
-    <textarea name="" id="message" cols="30" rows="10">
+<form action="{% url 'reverse' %}">
+    <textarea name="message" cols="30" rows="10">
         Type Something here...</textarea>
         <br> 
         <input type="submit" value="Reverse!">

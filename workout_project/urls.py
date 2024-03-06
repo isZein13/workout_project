@@ -20,6 +20,6 @@ from .import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.profile),
-    path('profile2/', views.profile2),
+    path('', views.home),
+    path('reversed/', views.reverse, name='reverse'),
     ]

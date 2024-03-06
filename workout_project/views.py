@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-def profile(request):
-    return render(request, 'profile.html')
+def home(request):
+    return render(request, 'home.html')
 
-def profile2(request):
-    return render(request, 'profile2.html')
+def reverse(request):
+    user_message = request.GET['message']
+    reversed_message = user_message[::-1]
+    return render(request, 'reverse.html', {'message':user_message, 'rev_message':reversed_message})
