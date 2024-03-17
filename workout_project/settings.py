@@ -30,6 +30,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'programms.apps.ProgrammsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

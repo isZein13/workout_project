@@ -4,8 +4,16 @@ from django.conf.urls.static import static
 from django.urls import path
 from .import views
 import programms.views
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import YourModelViewSet
+
+
+router = DefaultRouter()
+router.register(r'your-models', YourModelViewSet)
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('programs/', programms.views.home, name='programs'),
