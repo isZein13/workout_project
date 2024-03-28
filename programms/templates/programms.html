@@ -11,12 +11,11 @@
     <div class="jumbotron text-center" style="background-color: rgb(140, 157, 235);">
         {% for i in programs.all %}
         <div class="jumbotron text-center">
-            <form action="{% url 'show-program' %}">
-            <h1>Program Name: {{ i.name }} </h1>
-            <h3>Description: {{ i.description }}</h3>
-            <img class="card-img-top" style="width: 69rem" src="{{ i.program_picture.url }}" alt="err404">
-            <input class="btn btn-success" type="submit" value="Start!">
-        </form>
+           
+            <a href="{% url 'programms:show-program' %}"><h1>Program: {{ i.name }} </h1></a>
+            <h3>Description: {{ i.get_brief }} ... <a href="{% url 'programms:current-program' prog_id=i.program_id %}">read more</a></h3>
+            <img class="rounded mx-auto d-block" style="width: 22cm" src="{{ i.program_picture.url }}" alt="err404">
+            
         </div>
     {% endfor %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

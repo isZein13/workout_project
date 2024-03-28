@@ -9,7 +9,8 @@ class WorkoutProgram(models.Model):
 
     def __str__(self):
         return self.name
-    
+    def get_brief(self):
+        return self.description[:70]
 
 class Exercise(models.Model):
     exercise_id = models.AutoField(primary_key=True)

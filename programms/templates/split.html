@@ -10,7 +10,7 @@
     <div class="jumbotron text-center" style="background-color: rgb(140, 157, 235);">
         {% for i in exercise.all %}
         <div class="jumbotron text-center">
-            <h1>Program Name: {{ i.name }} </h1>
+            <h1>Exercise Name: {{ i.name }} </h1>
             <h3>Description: {{ i.description }}</h3>
             <img class="card-img-top" style="width: 69rem" src="{{ i.exercise_picture.url }}" alt="err404">
         </div>
