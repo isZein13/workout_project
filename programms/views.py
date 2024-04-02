@@ -10,5 +10,7 @@ def showprogram(request):
     return render(request, 'split.html', {'exercise' : exercise})
 
 def current_program(request, prog_id):
-    current_prog = get_list_or_404(WorkoutProgram, pk = prog_id)
-    return render(request, 'progdescription.html', {'current':current_prog})
+    current_prog = WorkoutProgram.objects.get(pk=prog_id)
+    associated_exercises = ExerciseWorkoutProgram.objects.filter(program=current_prog)
+    return render(request, 'progdescription.html', {'current': current_prog, 'associated_exercises': associated_exercises})
+
